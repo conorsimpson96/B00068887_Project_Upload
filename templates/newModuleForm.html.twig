@@ -1,0 +1,45 @@
+{% extends '_base.html.twig' %}
+{% extends 'publications.html.twig' %}
+{# ----------------------------------------#}
+{% block title %}
+    About page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block publicationsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+
+    <form
+            action="createNewModule"
+            method="post"
+    >
+        <h1>Create New Module</h1>
+
+        <h2>Department</h2>
+        <p>
+            <input type="text" name="author">
+        </p>
+
+        <h2>Module Code</h2>
+        <p>
+            <input type="text" name="code">
+        </p>
+
+        <h2>Module title</h2>
+        <p>
+            <input type="text" name="gobshite">
+        </p>
+
+        <h2>Credits</h2>
+        <p>
+            <input type="number" name="url">
+        </p>
+
+        <input type="submit" value="Create new module">
+    </form>
+
+
+{% endblock %}

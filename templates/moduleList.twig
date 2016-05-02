@@ -1,0 +1,69 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    About page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block publicationsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+    <table>
+
+
+       {% for modules in module %}
+
+        <tr>
+            <td>
+                <a href="/deleteModule={{ module.id }}">
+                    (delete)
+                </a>
+            </td>
+
+            <td>
+                <a href="/updateModule={{ module.id }}">
+                    (update)
+                </a>
+            </td>
+
+            <td>id = {{ module.id }}</td>
+            <td>title = {{ module.title }}</td>
+            <td>code ={{ module.code }}</td>
+            <td>credits = {{ module.credits }}</td>
+        </tr>
+
+{% endfor %}
+    </table>
+
+    <hr>
+    <form
+            action="/showNewModuleForm"
+            method="get">
+
+        <input type="hidden" name="action" value="showNewModuleForm">
+
+        <input type="submit" value="ADD A NEW MODULE">
+
+    </form>
+
+
+    <hr>
+    <form
+            action="/searchAction"
+            method="get">
+
+        <input type="text" name="searchText">
+
+        <input type="hidden" name="action" value="customSearch">
+
+        <input type="submit" value="search">
+
+    </form>
+
+
+
+
+
+{% endblock %}

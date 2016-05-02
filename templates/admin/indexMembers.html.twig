@@ -1,0 +1,14 @@
+{% extends '_base.html.twig' %}
+
+{% block title %}Student home{% endblock %}
+{% block studentHomeNavStyle %}current_page{% endblock %}
+{% block main %}
+    {% if username %}
+        <h1 id="username"> Welcome to your Profile Page {{ username }} (Member)</h1>
+
+    {% else %}
+        <h4 id="username"> Welcome to your Home Page {{ username }}</h4>
+
+    {% endif %}
+
+{% endblock %}

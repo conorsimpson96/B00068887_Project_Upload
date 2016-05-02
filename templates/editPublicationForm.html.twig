@@ -1,0 +1,55 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    About page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block publicationsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+    <h3 class="h3">Publications</h3>
+
+    <form
+            action="/processUpdatePublication"
+            method="post"
+    >
+
+        <h1>New publication</h1>
+
+
+        <p>
+            Id:
+            <br>
+            <input type="text" name="id" value="{{ id }}" readonly>
+        </p>
+
+
+        <p>
+            Author:
+            <br>
+            <input type="text" name="department" value="{{ author }}">
+        </p>
+
+
+        <p>
+            Publication title:
+            <br>
+            <input type="text" name="title" value="{{ title }}">
+        </p>
+
+        <p>
+            URL:
+            <br>
+            <input type="text" name="credits" value="{{ url }}">
+        </p>
+
+
+        <p>
+            <input type="submit" value="UPDATE Module">
+        </p>
+
+    </form>
+{% endblock %}

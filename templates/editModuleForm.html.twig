@@ -1,0 +1,46 @@
+
+<form
+        action="/processUpdateModuleAction"
+        method="post"
+>
+
+    <h1>New module</h1>
+
+
+    <p>
+        Id:
+        <br>
+        <input type="text" name="id" value="{{ id }}" readonly>
+    </p>
+
+
+    <p>
+        Department:
+        <br>
+        <input type="text" name="department" value="{{ department }}">
+    </p>
+
+    <p>
+        Module code:
+        <br>
+        <input type="text" name="code" value="{{ code }}">
+    </p>
+
+    <p>
+        Module title:
+        <br>
+        <input type="text" name="title" value="{{ title }}">
+    </p>
+
+    <p>
+        Number of credits:
+        <br>
+        <input type="text" name="credits" value="{{ credits }}">
+    </p>
+
+
+    <p>
+        <input type="submit" value="UPDATE Module">
+    </p>
+
+</form>

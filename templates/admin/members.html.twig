@@ -1,0 +1,22 @@
+
+{% extends '_base.html.twig' %}
+
+{% block title %}Student Page{% endblock %}
+
+{% block StudentNavStyle %}current_page{% endblock %}
+
+{% block main %}
+
+    <h1>You're in the Members Area </h1>
+    <p>Members are allowed to do the following:<br>
+        - can edit their profile page<br>
+        - can CRUD a publication (any member can CRUD any publication)<br>
+        - can CRUD a project for which they are the creator (when a project created the creator ID is stored with that record)<br>
+        - can upload / change their profile page photo<br>
+        - can upload / change their a project page photo (for projects they created)<br>
+
+
+    </p>
+
+
+{% endblock %}

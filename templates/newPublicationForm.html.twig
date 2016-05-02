@@ -1,0 +1,48 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    About page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block publicationsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+    <h3 class="h3">Publications</h3>
+
+    <form
+            action="/processNewPublicationAction"
+            method="post"
+    >
+
+        <h1>New Publication</h1>
+
+        <p>
+            Author:
+            <br>
+            <input type="text" name="author">
+        </p>
+
+
+
+        <p>
+            Publication title:
+            <br>
+            <input type="text" name="title">
+        </p>
+
+        <p>
+           URL
+            <br>
+            <input type="text" name="url" value="">
+        </p>
+
+        <p>
+            <input type="submit" value="Create New publication">
+        </p>
+
+    </form>
+
+{% endblock %}

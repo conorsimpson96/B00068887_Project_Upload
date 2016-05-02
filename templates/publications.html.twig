@@ -1,0 +1,71 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    About page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block publicationsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+    <h3 class="h3">Publications</h3>
+<table>
+
+    <form
+            method="post"
+            action="/listAction"
+    >
+
+{% for publications in publications %}
+
+        <tr>
+            <td>
+                <a href="/deleteAction={{ publication.id }}">
+                    (delete)
+                </a>
+            </td>
+
+            <td>
+                <a href="updateAction={{ publication.id }}">
+                    (update)
+                </a>
+            </td>
+
+            <td>id ={{ publication.id }}</td>
+            <td>title = {{ publication.title }}</td>
+            <td>Author = {{ publication.author }}</td>
+            <td>URL = {{ publication.url }}</td>
+        </tr>
+
+ {% endfor %}
+</form>
+    </table>
+
+    <hr>
+    <form
+            action="/showNewPublicationFormAction"
+            method="get">
+
+        <input type="hidden" name="action" value="showNewModuleForm">
+
+        <input type="submit" value="Add Publication">
+
+    </form>
+
+
+    <hr>
+    <form
+            action="/searchAction"
+            method="get">
+
+        <input type="text" name="searchText">
+
+        <input type="hidden" name="action" value="customSearch">
+
+        <input type="submit" value="search">
+
+    </form>
+
+{% endblock %}
